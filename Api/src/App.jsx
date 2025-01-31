@@ -24,6 +24,11 @@ function App() {
     const response = axios.put(`${BASE_URL}/users/${userId} `, updatedId);
   };
 
+  const deleteUserById = async (userId) => {
+    const deleteResponse = axios.delete(`${BASE_URL}/users/${userId}`);
+    console.log(deleteResponse.data);
+  };
+
   useEffect(() => {
     // getAllUsers();
     //getUserById(2);
@@ -32,11 +37,12 @@ function App() {
     //   password: "999",
     // };
     // createUser(newUser);
+    // updateUser("1", {
+    //   username: "icardi",
+    //   password: "1579",
+    // });
 
-    updateUser("1", {
-      username: "icardi",
-      password: "1579",
-    });
+    deleteUserById("2");
   }, []);
 
   return <div></div>;
