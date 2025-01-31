@@ -20,16 +20,23 @@ function App() {
     console.log("response", respoonse.data);
   };
 
+  const updateUser = async (userId, updatedId) => {
+    const response = axios.put(`${BASE_URL}/users/${userId} `, updatedId);
+  };
+
   useEffect(() => {
     // getAllUsers();
     //getUserById(2);
+    // const newUser = {
+    //   username: "Nalan",
+    //   password: "999",
+    // };
+    // createUser(newUser);
 
-    const newUser = {
-      username: "Nalan",
-      password: "999",
-    };
-
-    createUser(newUser);
+    updateUser("1", {
+      username: "icardi",
+      password: "1579",
+    });
   }, []);
 
   return <div></div>;
