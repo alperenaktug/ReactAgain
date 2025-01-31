@@ -15,8 +15,21 @@ function App() {
     console.log(response.data);
   };
 
+  const createUser = async (newUser) => {
+    const respoonse = axios.post(`${BASE_URL}/users`, newUser);
+    console.log("response", respoonse.data);
+  };
+
   useEffect(() => {
-    getUserById(2);
+    // getAllUsers();
+    //getUserById(2);
+
+    const newUser = {
+      username: "Nalan",
+      password: "999",
+    };
+
+    createUser(newUser);
   }, []);
 
   return <div></div>;
