@@ -6,6 +6,8 @@ import Contact from "./pages/Contact";
 import Produts from "./pages/Produts";
 import NotFound from "./pages/NotFound";
 import Header from "./components/Header";
+import EmployeeAbout from "./pages/EmployeeAbout";
+import CompanyAbout from "./pages/CompanyAbout";
 
 function App() {
   return (
@@ -14,7 +16,10 @@ function App() {
         <Header />
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
+          <Route path="/about" element={<About />}>
+            <Route path="employee" element={<EmployeeAbout />} />
+            <Route path="company" element={<CompanyAbout />} />
+          </Route>
           <Route path="/products" element={<Produts />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="*" element={<NotFound />} />
